@@ -6,4 +6,5 @@ extends Node2D
 
 
 func _on_entrada_taverna_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://scenes/taverna.tscn")

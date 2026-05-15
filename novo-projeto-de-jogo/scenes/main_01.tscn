@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://u52i0s7eajj1"]
+
+[ext_resource type="PackedScene" uid="uid://bmflmbg6klgh" path="res://scenes/world.tscn" id="1_0lj8e"]
+[ext_resource type="PackedScene" uid="uid://khkrtvwq2u58" path="res://scenes/player.tscn" id="2_siw4o"]
+[ext_resource type="AudioStream" uid="uid://n4e6chbtguch" path="res://map 1.mp3" id="3_i56dh"]
+
+[node name="Main_01" type="Node" unique_id=1867454706]
+
+[node name="world" parent="." unique_id=242346186 instance=ExtResource("1_0lj8e")]
+
+[node name="Player" parent="." unique_id=1943073113 instance=ExtResource("2_siw4o")]
+position = Vector2(415, 264)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=488216707]
+stream = ExtResource("3_i56dh")
+autoplay = true
+parameters/looping = true

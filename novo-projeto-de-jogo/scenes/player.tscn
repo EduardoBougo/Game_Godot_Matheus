@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://hiba1k87c8hq"]
+[gd_scene format=3 uid="uid://khkrtvwq2u58"]
 
 [ext_resource type="Script" uid="uid://bvp3xsblk7h7p" path="res://player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://di3pw3gvbks1o" path="res://assets/Characters/Human/topdown_player.png" id="2_g2els"]
@@ -119,9 +119,10 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1ej7"]
 radius = 7.0
-height = 20.0
+height = 16.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1943073113 groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1501156656]
@@ -129,7 +130,6 @@ sprite_frames = SubResource("SpriteFrames_jej6c")
 animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1936272494]
-visible = false
 shape = SubResource("CapsuleShape2D_f1ej7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=296601454]
