@@ -1,25 +1,22 @@
 extends CharacterBody2D
+class_name Player
 
-# --- Variaveis de movimento --- 
+# --- Variaveis gerais --- 
 var move_speed := 300.0
-var mouse_position;
 var move_direction := Vector2.ZERO
-var last_direction = Vector2.DOWN;
 var canShoot = true;
 var timeToShoot = 1;
 @export var fireBall : PackedScene;
 @onready var animatedSprite := $AnimatedSprite2D;
 @onready var cooldownTimer := $Cooldown;
 
-func _process(delta: float) -> void:
-	mouse_position = get_global_mouse_position();
+
 
 func _physics_process(delta: float) -> void:
 	# Teclas de atalho
 	move_direction = Input.get_vector("Esquerda", "Direita", "Cima", "Baixo")
 	velocity = move_direction * move_speed
 	
-	last_direction = move_direction.normalized();
 	
 	verifyMovement();
 	
@@ -50,9 +47,9 @@ func _input(event: InputEvent) -> void:
 
 func spawnFireBall():
 	var instance := fireBall.instantiate();
-	instance.position = global_position;
+	instance.global_position = global_position;
 	
-	var mouse_direction = (mouse_position - instance.position).normalized();
+	var mouse_direction = (get_global_mouse_position() - instance.global_position).normalized();
 	
 	instance.direction = mouse_direction;
 	
