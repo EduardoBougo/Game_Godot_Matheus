@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 # --- Variaveis de movimento --- 
-var move_speed := 300.0
+var move_speed := 100.0
 var mouse_position;
 var move_direction := Vector2.ZERO
 var last_direction = Vector2.DOWN;
@@ -11,6 +11,10 @@ var timeToShoot = 1;
 @export var fireBall : PackedScene;
 @onready var animatedSprite := $AnimatedSprite2D;
 @onready var cooldownTimer := $Cooldown;
+
+func _ready() -> void:
+	Global.player = self
+
 
 func _process(delta: float) -> void:
 	mouse_position = get_global_mouse_position();
