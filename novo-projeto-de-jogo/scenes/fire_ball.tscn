@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dc8mtyd4t6an2"]
+
+[ext_resource type="Texture2D" uid="uid://c3e55upp3e6o6" path="res://assets/Elements/VFX/Fire/fireball.png" id="1_51gij"]
+[ext_resource type="Script" uid="uid://cfldnlwrew1xy" path="res://fire_ball.gd" id="1_qddq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51gij"]
+size = Vector2(33, 31)
+
+[node name="FireBall" type="Area2D" unique_id=1576062027]
+scale = Vector2(0.28233105, 0.28233105)
+script = ExtResource("1_qddq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=291443799]
+texture_filter = 1
+scale = Vector2(0.1425373, 0.1425373)
+texture = ExtResource("1_51gij")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1941283561]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_51gij")

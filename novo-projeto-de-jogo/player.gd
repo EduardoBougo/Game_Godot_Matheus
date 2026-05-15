@@ -3,15 +3,22 @@ class_name Player
 
 # --- Variaveis de movimento --- 
 var move_speed := 300.0
+var mouse_position;
 var move_direction := Vector2.ZERO
+var last_direction = Vector2.DOWN;
+@export var fireBall : PackedScene;
 @onready var animatedSprite := $AnimatedSprite2D;
 
 
+func _process(delta: float) -> void:
+	mouse_position = get_global_mouse_position();
 
 func _physics_process(delta: float) -> void:
 	# Teclas de atalho
 	move_direction = Input.get_vector("Esquerda", "Direita", "Cima", "Baixo")
 	velocity = move_direction * move_speed
+	
+	last_direction = move_direction.normalized();
 	
 	verifyMovement();
 	
@@ -32,3 +39,17 @@ func verifyMovement():
 				animatedSprite.play("up");
 	else:
 		animatedSprite.play("idle");
+		
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Atacar"):
+		spawnFireBall();
+
+func spawnFireBall():
+	var instance := fireBall.instantiate();
+	instance.position = global_position;
+	
+	var mouse_direction = (mouse_position - global_position).normalized();
+	
+	instance.direction = mouse_direction;
+	
+	get_parent().add_child(instance);
