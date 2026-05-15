@@ -13,6 +13,14 @@ var timeToShoot = 1;
 
 func _ready() -> void:
 	Global.player = self
+	
+	if Global.target_door_name != "":
+		# Procura na cena atual por um nó com o nome que salvamos no Global
+		var door = get_tree().current_scene.find_child(Global.target_door_name, true, false)
+		if door:
+			# Move o player para a posição da porta
+			# Dica: adicione um pequeno offset para ele não nascer EXATAMENTE colidindo
+			global_position = door.global_position + Vector2(0, 20)
 
 
 func _process(delta: float) -> void:

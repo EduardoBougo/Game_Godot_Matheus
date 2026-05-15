@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ce1rnqpj5nunr" path="res://assets/world/spr_tileset_sunnysideworld_16px.png" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://bb7w8wtxtlliw" path="res://scripts/world.gd" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://77bmh1g2lubp" path="res://scenes/porta.tscn" id="3_4wyf3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
 texture = ExtResource("1_nnsk1")
@@ -6987,9 +6988,6 @@ texture = ExtResource("1_nnsk1")
 [sub_resource type="TileSet" id="TileSet_rwgxs"]
 sources/1 = SubResource("TileSetAtlasSource_nnsk1")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0juu"]
-size = Vector2(18, 12)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwgxs"]
 size = Vector2(126, 116)
 
@@ -7023,14 +7021,6 @@ tile_set = SubResource("TileSet_i7141")
 tile_map_data = PackedByteArray("AAAiABMAAQAcACcAAAAgABMAAQAUACcAAAAjABAAAQAbAAUAAAAgABEAAQAgACQAAAAiABEAAQAiACQAAAAhABEAAQAhACQAAAAhABIAAQAhACUAAAAiABIAAQAiACUAAAAgABIAAQAgACUAAAAhABAAAQAhACMAAAAgABAAAQAgACMAAAAiABAAAQAiACMAAAAhAA8AAQAhACMAAAAgAA8AAQAgACMAAAAiAA8AAQAiACMAAAAiAA4AAQAiACIAAAAgAA4AAQAgACIAAAAhAA4AAQAhACIAAAA=")
 tile_set = SubResource("TileSet_rwgxs")
 
-[node name="Entrada_Taverna" type="Area2D" parent="." unique_id=1389674015]
-position = Vector2(0, -12)
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada_Taverna" unique_id=1201686782]
-position = Vector2(536, 374)
-shape = SubResource("RectangleShape2D_k0juu")
-
 [node name="Paredes" type="StaticBody2D" parent="." unique_id=635938064]
 position = Vector2(536, 369)
 collision_mask = 2
@@ -7051,4 +7041,7 @@ shape = SubResource("SegmentShape2D_k0juu")
 position = Vector2(64, -119)
 shape = SubResource("SegmentShape2D_71j4m")
 
-[connection signal="body_entered" from="Entrada_Taverna" to="." method="_on_entrada_taverna_body_entered"]
+[node name="Porta" parent="." unique_id=1494139964 instance=ExtResource("3_4wyf3")]
+position = Vector2(536, 359)
+target_scene = "res://scenes/main_02.tscn"
+target_door = "entrada"

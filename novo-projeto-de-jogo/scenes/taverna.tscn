@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnqxq4f8rhpl3" path="res://scripts/taverna.gd" id="1_oid1v"]
 [ext_resource type="Texture2D" uid="uid://ce1rnqpj5nunr" path="res://assets/world/spr_tileset_sunnysideworld_16px.png" id="1_xurcs"]
+[ext_resource type="PackedScene" uid="uid://77bmh1g2lubp" path="res://scenes/porta.tscn" id="3_oid1v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxmvk"]
 texture = ExtResource("1_xurcs")
@@ -3488,13 +3489,82 @@ texture = ExtResource("1_xurcs")
 [sub_resource type="TileSet" id="TileSet_kn8k3"]
 sources/0 = SubResource("TileSetAtlasSource_07xsl")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxmvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oid1v"]
+size = Vector2(96, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07xsl"]
+size = Vector2(32, 6)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kn8k3"]
+distance = -65.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u85w6"]
+distance = -87.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g2v8d"]
+distance = -81.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qdhpr"]
+distance = -81.0
+
 [node name="Taverna" type="Node2D" unique_id=1394141452]
 script = ExtResource("1_oid1v")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=130938367]
+[node name="Mapa" type="Node2D" parent="." unique_id=1481183147]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Mapa" unique_id=130938367]
 tile_map_data = PackedByteArray("AAD9//z/AAAXABQAAAD9//3/AAAXABQAAAD9//7/AAAXABQAAAD9////AAAXABQAAAD9/wAAAAAXABQAAAD9/wEAAAAXABQAAAD9/wIAAAAXABQAAAD9/wMAAAAXABQAAAD+//z/AAAXABQAAAD+//3/AAAXABQAAAD+//7/AAAXABQAAAD+////AAAXABQAAAD+/wAAAAAXABQAAAD+/wEAAAAXABQAAAD+/wIAAAAXABQAAAD+/wMAAAAXABQAAAD///z/AAAXABQAAAD///3/AAAXABQAAAD///7/AAAXABQAAAD/////AAAXABQAAAD//wAAAAAXABQAAAD//wEAAAAXABQAAAD//wIAAAAXABQAAAD//wMAAAAXABQAAAAAAPz/AAAXABQAAAAAAP3/AAAXABQAAAAAAP7/AAAXABQAAAAAAP//AAAXABQAAAAAAAAAAAAXABQAAAAAAAEAAAAXABQAAAAAAAIAAAAXABQAAAAAAAMAAAAXABQAAAABAPz/AAAXABQAAAABAP3/AAAXABQAAAABAP7/AAAXABQAAAABAP//AAAXABQAAAABAAAAAAAXABQAAAABAAEAAAAXABQAAAABAAIAAAAXABQAAAABAAMAAAAXABQAAAACAPz/AAAXABQAAAACAP3/AAAXABQAAAACAP7/AAAXABQAAAACAP//AAAXABQAAAACAAAAAAAXABQAAAACAAEAAAAXABQAAAACAAIAAAAXABQAAAACAAMAAAAXABQAAAADAPz/AAAXABQAAAADAP3/AAAXABQAAAADAP7/AAAXABQAAAADAP//AAAXABQAAAADAAAAAAAXABQAAAADAAEAAAAXABQAAAADAAIAAAAXABQAAAADAAMAAAAXABQAAAD8//z/AAAXABQAAAD8//3/AAAXABQAAAD8//7/AAAXABQAAAD8////AAAXABQAAAD8/wAAAAAXABQAAAD8/wEAAAAXABQAAAD8/wIAAAAXABQAAAD8/wMAAAAXABQAAAD8//r/AAAXABQAAAD8//v/AAAXABQAAAD9//r/AAAXABQAAAD9//v/AAAXABQAAAD+//r/AAAXABQAAAD+//v/AAAXABQAAAD///r/AAAXABQAAAD///v/AAAXABQAAAAAAPr/AAAXABQAAAAAAPv/AAAXABQAAAABAPr/AAAXABQAAAABAPv/AAAXABQAAAACAPr/AAAXABQAAAACAPv/AAAXABQAAAADAPr/AAAXABQAAAADAPv/AAAXABQAAAD8//j/AAAoABkAAAD9//j/AAAoABkAAAD+//j/AAAoABkAAAD///j/AAAoABkAAAAAAPj/AAAoABkAAAABAPj/AAAoABkAAAACAPj/AAAoABkAAAADAPj/AAAoABkAAAD8//n/AAAXABQAAAD9//n/AAAXABQAAAD+//n/AAAXABQAAAD///n/AAAXABQAAAAAAPn/AAAXABQAAAABAPn/AAAXABQAAAACAPn/AAAXABQAAAADAPn/AAAXABQAAAD7//n/AAAXABQAAAD7//r/AAAXABQAAAD7//v/AAAXABQAAAD7//z/AAAXABQAAAD7//3/AAAXABQAAAD7//7/AAAXABQAAAD7////AAAXABQAAAD7/wAAAAAXABQAAAD7/wEAAAAXABQAAAD7/wIAAAAXABQAAAD7/wMAAAAXABQAAAAEAPn/AAAXABQAAAAEAPr/AAAXABQAAAAEAPv/AAAXABQAAAAEAPz/AAAXABQAAAAEAP3/AAAXABQAAAAEAP7/AAAXABQAAAAEAP//AAAXABQAAAAEAAIAAAAXABQAAAAEAAMAAAAXABQAAAAEAAEAAAAXABQAAAAEAAAAAAAXABQAAAD7//j/AAArABkAAAAEAPj/AAArABkAAAA=")
 tile_set = SubResource("TileSet_oid1v")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1817011690]
+[node name="TileMapLayer2" type="TileMapLayer" parent="Mapa" unique_id=1817011690]
 tile_map_data = PackedByteArray("AAD/////AAAsACQAAAD//wAAAAAsACQAAAAAAP//AAAsACQAAAAAAAAAAAAsACQAAAABAP7/AAAtACQAAAD+////AAArACQAAAD+/wAAAAArACQAAAD+/wEAAAArACQAAAD+/wIAAAArACUAAAD//wIAAAAsACUAAAAAAAIAAAAsACUAAAABAAIAAAAtACUAAAABAP//AAAtACQAAAABAAAAAAAtACQAAAABAAEAAAAtACQAAAD//wEAAAAsACQAAAAAAAEAAAAsACQAAAABAP3/AAAtACQAAAD+//7/AAArACQAAAD+//3/AAArACQAAAD+//z/AAArACMAAAABAPz/AAAtACMAAAD///z/AAAsACMAAAAAAPz/AAAsACMAAAD///3/AAAsACQAAAD///7/AAAsACQAAAAAAP3/AAAsACQAAAAAAP7/AAAsACQAAAADAAEAAAAxACMAAAADAP7/AAAxACMAAAD8//7/AAAxACMAAAD8/wEAAAAxACMAAAD9//r/AAAYABUAAAD+//r/AAAYABUAAAD///r/AAAYABUAAAAAAPr/AAAYABUAAAAEAPr/AAAYABUAAAD8//r/AAAYABUAAAD7//r/AAAYABUAAAADAPr/AAAYABUAAAD7//n/AAAuACEAAAAEAPn/AAAqACEAAAA=")
 tile_set = SubResource("TileSet_kn8k3")
+
+[node name="Colisoes" type="StaticBody2D" parent="." unique_id=574340245]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes" unique_id=242849500]
+position = Vector2(-56, 24)
+shape = SubResource("RectangleShape2D_xxmvk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisoes" unique_id=914795312]
+position = Vector2(56, 24)
+shape = SubResource("RectangleShape2D_xxmvk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colisoes" unique_id=803374376]
+position = Vector2(56, -24)
+shape = SubResource("RectangleShape2D_xxmvk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Colisoes" unique_id=769271162]
+position = Vector2(-56, -24)
+shape = SubResource("RectangleShape2D_xxmvk")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Colisoes" unique_id=856684754]
+position = Vector2(-32, -92)
+shape = SubResource("RectangleShape2D_oid1v")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Colisoes" unique_id=754943637]
+position = Vector2(64, -92)
+shape = SubResource("RectangleShape2D_07xsl")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Colisoes" unique_id=547245272]
+shape = SubResource("WorldBoundaryShape2D_kn8k3")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Colisoes" unique_id=1187789963]
+position = Vector2(0, -31)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_u85w6")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Colisoes" unique_id=101155033]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_g2v8d")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Colisoes" unique_id=501295662]
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_qdhpr")
+
+[node name="Porta" parent="." unique_id=1494139964 instance=ExtResource("3_oid1v")]
+position = Vector2(0, 68)
+target_scene = "res://scenes/main_01.tscn"
+target_door = "entrada"
