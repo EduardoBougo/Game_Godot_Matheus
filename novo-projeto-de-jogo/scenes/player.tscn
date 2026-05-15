@@ -136,3 +136,7 @@ shape = SubResource("CapsuleShape2D_f1ej7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=296601454]
 zoom = Vector2(4, 4)
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1474070542]
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
