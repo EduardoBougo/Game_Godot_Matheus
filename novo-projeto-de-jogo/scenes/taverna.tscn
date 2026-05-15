@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://btpxm8mqdhsxh"]
 
-[ext_resource type="Script" uid="uid://cnqxq4f8rhpl3" path="res://taverna.gd" id="1_oid1v"]
+[ext_resource type="Script" uid="uid://cnqxq4f8rhpl3" path="res://scripts/taverna.gd" id="1_oid1v"]
 [ext_resource type="Texture2D" uid="uid://ce1rnqpj5nunr" path="res://assets/world/spr_tileset_sunnysideworld_16px.png" id="1_xurcs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxmvk"]

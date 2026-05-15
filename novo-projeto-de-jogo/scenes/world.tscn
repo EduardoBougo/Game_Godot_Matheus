@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bmflmbg6klgh"]
 
 [ext_resource type="Texture2D" uid="uid://ce1rnqpj5nunr" path="res://assets/world/spr_tileset_sunnysideworld_16px.png" id="1_nnsk1"]
-[ext_resource type="Script" uid="uid://bb7w8wtxtlliw" path="res://world.gd" id="1_rwgxs"]
+[ext_resource type="Script" uid="uid://bb7w8wtxtlliw" path="res://scripts/world.gd" id="1_rwgxs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
 texture = ExtResource("1_nnsk1")

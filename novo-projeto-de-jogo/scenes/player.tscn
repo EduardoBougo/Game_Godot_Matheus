@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://khkrtvwq2u58"]
 
-[ext_resource type="Script" uid="uid://bvp3xsblk7h7p" path="res://player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bvp3xsblk7h7p" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://di3pw3gvbks1o" path="res://assets/Characters/Human/topdown_player.png" id="2_g2els"]
 [ext_resource type="PackedScene" uid="uid://dc8mtyd4t6an2" path="res://scenes/fire_ball.tscn" id="2_qhqgy"]
 
