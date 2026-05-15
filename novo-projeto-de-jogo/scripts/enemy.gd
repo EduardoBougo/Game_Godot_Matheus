@@ -28,6 +28,7 @@ func take_damage(amount: int, source_position: Vector2):
 	
 	animated_sprite_2d.play("hit")
 	
+	
 	if health <= 0:
 		eliminado = true
 		animated_sprite_2d.play("dead")
