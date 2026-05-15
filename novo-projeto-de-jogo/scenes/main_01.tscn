@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bmflmbg6klgh" path="res://scenes/world.tscn" id="1_0lj8e"]
 [ext_resource type="PackedScene" uid="uid://khkrtvwq2u58" path="res://scenes/player.tscn" id="2_siw4o"]
 [ext_resource type="AudioStream" uid="uid://n4e6chbtguch" path="res://map 1.mp3" id="3_i56dh"]
+[ext_resource type="PackedScene" uid="uid://2u46x23sv0t2" path="res://scenes/enemy.tscn" id="3_siw4o"]
 
 [node name="Main_01" type="Node" unique_id=1867454706]
 
@@ -10,6 +11,10 @@
 
 [node name="Player" parent="." unique_id=1943073113 instance=ExtResource("2_siw4o")]
 position = Vector2(415, 264)
+fireBall = null
+
+[node name="Enemy" parent="." unique_id=1268684524 instance=ExtResource("3_siw4o")]
+position = Vector2(408, 128)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=488216707]
 stream = ExtResource("3_i56dh")
