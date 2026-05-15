@@ -202,12 +202,12 @@ animations = [{
 radius = 5.0
 height = 16.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1268684524]
+[node name="Enemy" type="CharacterBody2D" unique_id=1268684524 groups=["enemies"]]
 script = ExtResource("1_4ra3w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1562212309]
 sprite_frames = SubResource("SpriteFrames_rogs8")
-animation = &"run"
+animation = &"hit"
 autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=407356542]
