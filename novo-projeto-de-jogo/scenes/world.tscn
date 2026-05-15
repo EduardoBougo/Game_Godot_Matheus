@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bmflmbg6klgh"]
 
 [ext_resource type="Texture2D" uid="uid://ce1rnqpj5nunr" path="res://assets/world/spr_tileset_sunnysideworld_16px.png" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://bb7w8wtxtlliw" path="res://world.gd" id="1_rwgxs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
 texture = ExtResource("1_nnsk1")
@@ -6986,7 +6987,24 @@ texture = ExtResource("1_nnsk1")
 [sub_resource type="TileSet" id="TileSet_rwgxs"]
 sources/1 = SubResource("TileSetAtlasSource_nnsk1")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0juu"]
+size = Vector2(18, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwgxs"]
+size = Vector2(126, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
+size = Vector2(51, 19)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k0juu"]
+a = Vector2(38, -12)
+b = Vector2(0, 7)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_71j4m"]
+b = Vector2(-41, -18)
+
 [node name="world" type="Node2D" unique_id=242346186]
+script = ExtResource("1_rwgxs")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1675339716]
 scale = Vector2(1.0020118, 0.89088625)
@@ -7004,3 +7022,33 @@ tile_set = SubResource("TileSet_i7141")
 [node name="Layer_03" type="TileMapLayer" parent="." unique_id=2061683357]
 tile_map_data = PackedByteArray("AAAiABMAAQAcACcAAAAgABMAAQAUACcAAAAjABAAAQAbAAUAAAAgABEAAQAgACQAAAAiABEAAQAiACQAAAAhABEAAQAhACQAAAAhABIAAQAhACUAAAAiABIAAQAiACUAAAAgABIAAQAgACUAAAAhABAAAQAhACMAAAAgABAAAQAgACMAAAAiABAAAQAiACMAAAAhAA8AAQAhACMAAAAgAA8AAQAgACMAAAAiAA8AAQAiACMAAAAiAA4AAQAiACIAAAAgAA4AAQAgACIAAAAhAA4AAQAhACIAAAA=")
 tile_set = SubResource("TileSet_rwgxs")
+
+[node name="Entrada_Taverna" type="Area2D" parent="." unique_id=1389674015]
+position = Vector2(0, -12)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada_Taverna" unique_id=1201686782]
+position = Vector2(536, 374)
+shape = SubResource("RectangleShape2D_k0juu")
+
+[node name="Paredes" type="StaticBody2D" parent="." unique_id=635938064]
+position = Vector2(536, 369)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes" unique_id=1847551453]
+position = Vector2(0, -62)
+shape = SubResource("RectangleShape2D_rwgxs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes" unique_id=59236602]
+position = Vector2(0.5, -128.5)
+shape = SubResource("RectangleShape2D_4wyf3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes" unique_id=693842623]
+position = Vector2(-62, -125)
+shape = SubResource("SegmentShape2D_k0juu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes" unique_id=1395449156]
+position = Vector2(64, -119)
+shape = SubResource("SegmentShape2D_71j4m")
+
+[connection signal="body_entered" from="Entrada_Taverna" to="." method="_on_entrada_taverna_body_entered"]

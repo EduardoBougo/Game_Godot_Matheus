@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dw1wdq4duquy6"]
+
+[ext_resource type="PackedScene" uid="uid://btpxm8mqdhsxh" path="res://scenes/taverna.tscn" id="1_2dl62"]
+[ext_resource type="PackedScene" uid="uid://khkrtvwq2u58" path="res://scenes/player.tscn" id="2_g45bh"]
+
+[node name="Main_01" type="Node" unique_id=1867454706]
+
+[node name="Taverna" parent="." unique_id=1394141452 instance=ExtResource("1_2dl62")]
+position = Vector2(145, 174)
+
+[node name="Player" parent="." unique_id=1943073113 instance=ExtResource("2_g45bh")]
+position = Vector2(145, 174)
