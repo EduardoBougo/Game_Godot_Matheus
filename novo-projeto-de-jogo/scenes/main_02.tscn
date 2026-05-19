@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://dw1wdq4duquy6"]
 
 [ext_resource type="PackedScene" uid="uid://btpxm8mqdhsxh" path="res://scenes/taverna.tscn" id="1_2dl62"]
+[ext_resource type="Script" uid="uid://ce5qphasx8exa" path="res://scripts/main_02.gd" id="1_g45bh"]
 [ext_resource type="PackedScene" uid="uid://hiba1k87c8hq" path="res://scenes/player.tscn" id="2_g45bh"]
+[ext_resource type="PackedScene" uid="uid://un2kk6ugux8b" path="res://scenes/coletavel.tscn" id="3_b4oob"]
 
-[node name="Main_01" type="Node" unique_id=1867454706]
+[node name="Main_02" type="Node" unique_id=1867454706]
+script = ExtResource("1_g45bh")
+item_cena = ExtResource("3_b4oob")
 
 [node name="Taverna" parent="." unique_id=1394141452 instance=ExtResource("1_2dl62")]
 
 [node name="Player" parent="." unique_id=1943073113 instance=ExtResource("2_g45bh")]
+
+[node name="Coletavel" parent="." unique_id=255061169 instance=ExtResource("3_b4oob")]
+position = Vector2(0, -70)
+scale = Vector2(0.05, 0.05)

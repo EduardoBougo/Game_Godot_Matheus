@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
-# --- Variaveis de movimento --- 
+#Variaveis 
 var move_speed := 100.0
 var mouse_position;
 var move_direction := Vector2.ZERO
 var last_direction = Vector2.DOWN;
 var canShoot = true;
 var timeToShoot = 1;
+
+var vida_maxima := 100
+var vida_atual: int = vida_maxima
+
 @export var fireBall : PackedScene;
 @onready var animatedSprite := $AnimatedSprite2D;
 @onready var cooldownTimer := $Cooldown;
@@ -54,11 +58,12 @@ func verifyMovement():
 		animatedSprite.play("idle");
 		
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Atacar"):
-		if canShoot:
-			spawnFireBall();
-			canShoot = false;
-			cooldownTimer.start(timeToShoot);
+	if Global.arma:
+		if Input.is_action_just_pressed("Atacar"):
+			if canShoot:
+				spawnFireBall();
+				canShoot = false;
+				cooldownTimer.start(timeToShoot);
 
 func spawnFireBall():
 	var instance := fireBall.instantiate();
@@ -74,3 +79,13 @@ func spawnFireBall():
 func _on_cooldown_timeout() -> void:
 	canShoot = true;
 	cooldownTimer.stop();
+
+
+func tomar_dano(quantidade: int) -> void:
+	vida_atual -= quantidade
+	print("Ai! Vida atual: ", vida_atual)
+	
+	if vida_atual <= 0:
+		print("Game Over!")
+		#tela de morte
+		return

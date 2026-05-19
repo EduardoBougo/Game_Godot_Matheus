@@ -1,15 +1,15 @@
 extends Node
 
-var player
+@export var item_cena: PackedScene
 
-var arma : bool = false
-var arma_is_coleted: bool = false
-
-var target_door_name: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if Global.arma_is_coleted == false:
+		var novo_item = item_cena.instantiate()
+		novo_item.global_position = Vector2(0, -70)
+		add_child(novo_item)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

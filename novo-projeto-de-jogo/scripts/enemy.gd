@@ -10,6 +10,8 @@ var player = null
 
 var eliminado = false
 
+var forca_do_dano: int = 20
+
 func _ready() -> void:
 	player = Global.player
 
@@ -34,3 +36,9 @@ func take_damage(amount: int, source_position: Vector2):
 		animated_sprite_2d.play("dead")
 		await get_tree().create_timer(1.5).timeout
 		queue_free()
+
+
+func _on_area_dano_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		if body.has_method("tomar_dano"):
+			body.tomar_dano(forca_do_dano)

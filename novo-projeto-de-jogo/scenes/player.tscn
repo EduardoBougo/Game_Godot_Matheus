@@ -124,6 +124,7 @@ height = 16.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1943073113 groups=["player"]]
 collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_g2els")
 fireBall = ExtResource("2_qhqgy")
 
@@ -131,7 +132,7 @@ fireBall = ExtResource("2_qhqgy")
 sprite_frames = SubResource("SpriteFrames_jej6c")
 animation = &"up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1936272494]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1936272494 groups=["player"]]
 shape = SubResource("CapsuleShape2D_f1ej7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=296601454]

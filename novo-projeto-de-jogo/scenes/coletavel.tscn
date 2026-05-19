@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://un2kk6ugux8b"]
+
+[ext_resource type="Script" uid="uid://bsr3e5ph2syrh" path="res://coletavel.gd" id="1_tyxgu"]
+[ext_resource type="Texture2D" uid="uid://c3e55upp3e6o6" path="res://assets/Elements/VFX/Fire/fireball.png" id="2_3hhr3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5f2j"]
+radius = 91.02197
+
+[node name="Coletavel" type="Area2D" unique_id=255061169]
+scale = Vector2(0.05, 0.05)
+collision_mask = 2
+script = ExtResource("1_tyxgu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1700274378]
+texture = ExtResource("2_3hhr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120543104]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_o5f2j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
